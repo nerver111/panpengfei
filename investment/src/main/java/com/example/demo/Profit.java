@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 public class Profit {
     public static void main(String[] args) {
-        select(CompanyType.HANGFA_DONGLI);
+        select(CompanyType.YANGHE_GUFEN);
     }
 
     public static void select(CompanyType type){
@@ -37,7 +37,7 @@ public class Profit {
                 calculation(new BigDecimal("1.5"),new BigDecimal("267"),new BigDecimal("0.3").subtract(new BigDecimal("0.03")));
                 break;
             case ZHONGGUO_PINGAN:
-                calculation(new BigDecimal("2.1"),new BigDecimal("76.54"),new BigDecimal("0.3").subtract(new BigDecimal("0.03")));
+                calculation(new BigDecimal("2.1"),new BigDecimal("76.54"),new BigDecimal("0.25").subtract(new BigDecimal("0.03")));
                 break;
             case LEPU_YILIAO:
                 calculation(new BigDecimal("0.2"),new BigDecimal("35.41"),new BigDecimal("0.32").subtract(new BigDecimal("0.03")));
@@ -60,8 +60,26 @@ public class Profit {
             case HANGFA_DONGLI:
                 calculation(new BigDecimal("0.144"),new BigDecimal("64.75"),new BigDecimal("0.4").subtract(new BigDecimal("0.03")));
                 break;
+            case HAILUO_SHUINI:
+                calculation(new BigDecimal("2.12"),new BigDecimal("47.08"),new BigDecimal("0.2883"));
+            case GELI_DIANQI:
+                calculation(new BigDecimal("3"),new BigDecimal("46.10"),new BigDecimal("0.0963"));
+            case ZHONGGUO_JIANZHU:
+                calculation(new BigDecimal("0.2147"),new BigDecimal("4.89"),new BigDecimal("0.1221"));
+            case YANGHE_GUFEN:
+                calculationRetrofit("3","198","0.0935");
             default:
         }
+    }
+
+    /**
+     * 计算每年的分红，以及分红回本需要的时间
+     * @param iniValue 当年的分红金额
+     * @param cost 分红前一天的买入价格
+     * @param growth 5年的平均增长率
+     */
+    public static void calculationRetrofit(String iniValue,String cost,String growth){
+        calculation(new BigDecimal(iniValue),new BigDecimal(cost),new BigDecimal(growth));
     }
 
     public static void calculation(BigDecimal iniValue,BigDecimal cost,BigDecimal growth){

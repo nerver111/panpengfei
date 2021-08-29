@@ -7,6 +7,7 @@ package com.example.demo.enums;
 
 public enum CompanyType {
     SHANGHAI_JICHANG("1","上海机场"),
+    GONGSHANG_YINHANG("2","工商银行"),
     LIZHU_JITUAN("3","丽珠集团"),
     WANKE("4","万科"),
     XINYE_YINHANG("5","兴业银行"),
@@ -18,9 +19,14 @@ public enum CompanyType {
     HUALAN_SHENGWU("11","华兰生物"),
     SHANGHAI_JIAHUA("12","上海家化"),
     GUOXING_GUANDIAN("13","国星光电"),
-    GONGSHANG_YINHANG("2","工商银行"),
     KELAI_JIDIAN("14","克来机电"),
-    HANGFA_DONGLI("15","航发动力");
+    HANLAN_HUANJING("16","翰蓝环境"),
+    HAILUO_SHUINI("17","海螺水泥"),
+    GELI_DIANQI("18","格力电器"),
+    ZHONGGUO_JIANZHU("19","中国建筑"),
+    YANGHE_GUFEN("20","洋河股份"),
+    HANGFA_DONGLI("99","航发动力");
+
     private String type;
     private String name;
 
